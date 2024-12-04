@@ -1,0 +1,296 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden; /* Prevent scrolling */
+  position: relative;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden; /* Prevent scrolling */
+  position: relative;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.iphone-container {
+  position: relative;
+  display: inline-block;
+  margin: 20px auto;
+  width: 300px;
+  height: 500px;
+  overflow: visible;
+}
+
+.main-img, .omain-img {
+  width: 90%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: opacity 5s ease-in-out;
+}
+
+.omain-img {
+  width: 100%; /* Match width to main-img */
+  height: auto;
+  z-index: 1;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+#progressContainer {
+  position: absolute;
+  width: 50%; /* Adjust width as needed */
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ddd;
+  border-radius: 15px;
+  overflow: hidden;
+  display: none; /* Initially hidden */
+  z-index: 2;
+}
+
+#progressBar {
+  width: 0;
+  height: 100%;
+  background-color: #4caf50;
+}
+
+#progressText {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: white;
+}
+
+#loadingCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 8px solid #ddd;
+  border-top: 8px solid #4caf50;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  display: none; /* Initially hidden */
+  z-index: 2;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  z-index: 2;
+  position: relative;
+  left: 5%;
+  top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Component styles */
+.component-container {
+  position: absolute;
+  width: 100px; /* Smaller size */
+  height: 100px; /* Smaller size */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-30px); /* Bounce up */ } 60% { transform: translateY(-15px); /* Bounce up */ } } 
+.component { width: 100%; height: auto; transition: transform 0.3s ease-in-out; cursor: pointer; animation: bounce 2s infinite; /* Apply bouncing effect */ }
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  background: lightblue;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  pointer-events: none;
+  left: 110%; /* Position the tooltip to the right of the component */
+  top: 50%;
+} 
+
+.component-container:hover .component {
+  transform: scale(1.5); /* Zoom in effect */
+}
+
+.component-container:hover .tooltip {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+  pointer-events: auto;
+}
+
+#progressContainer {
+  position: absolute;
+  width: 80%;
+  height: 30px;
+  top: 80%;
+  left: 69%;
+  transform: translate(-50%, -50%);
+  background-color: #ddd;
+  border-radius: 15px;
+  overflow: hidden;
+  display: none; /* Initially hidden */
+  z-index: 5;
+}
+
+#progressBar {
+  width: 0;
+  height: 100%;
+  background-color: #4caf50;
+}
+
+#progressText {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: white;
+}
+
+#loadingCircle {
+  position: absolute;
+  top: 50%;
+  left: 69%;
+  transform: translate(-50%, -50%);
+  border: 8px solid #ddd;
+  border-top: 8px solid #4caf50;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  display: none; /* Initially hidden */
+  z-index: 5;
+}
+
+#progressMessage { 
+  position: absolute; 
+  top: 65%; 
+  left: 68%; transform: translate(-50%, -50%); font-size: 1rem; color: #ffffff; display: none; /* Initially hidden */ z-index: 2; }
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  z-index: 2;
+  position: relative;
+  left: 5%;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Component styles */
+.component-container {
+  position: absolute;
+  width: 100px; /* Smaller size */
+  height: 100px; /* Smaller size */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.component {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  background: lightblue;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  pointer-events: none;
+  left: 110%; /* Position the tooltip to the right of the component */
+  top: 50%;
+}
+
+/* Dark mode support */ @media (prefers-color-scheme: dark) { 
+  body { background-color: #c2ef9a; color: #f0f0f0; } .tooltip { background: #444; color: #f0f0f0; }}
